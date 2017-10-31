@@ -72,9 +72,9 @@ changeTab (selectedTab) {
     const { selectedTab } = this.state
    if (this.state.flag === 'mapview'){
     return (
-        <Mapview 
-          changeLocation = {this.changeLocation.bind(this)} 
-          changeFlag = {this.changeFlag.bind(this)} 
+        <Mapview
+          changeLocation = {this.changeLocation.bind(this)}
+          changeFlag = {this.changeFlag.bind(this)}
           latitude = {this.state.latitude}
           longitude = {this.state.longitude}
           getLocation = {this.getLocation.bind(this)}
@@ -99,7 +99,7 @@ changeTab (selectedTab) {
             backgroundColor ="#000000"
             />
 
-                    <TouchableHighlight 
+                    <TouchableHighlight
                         style = {styles.addButton}
                         onPress = {() => {
                             this.changeFlag('login');
@@ -110,7 +110,7 @@ changeTab (selectedTab) {
 
 
 
-                    <TouchableHighlight 
+                    <TouchableHighlight
                         style = {styles.addButton}
                         onPress = {() => {
                             this.changeFlag('signup');
@@ -131,10 +131,10 @@ changeTab (selectedTab) {
             );
         }else if (this.state.flag === 'sendNotification') {
             return (
-                <SendNotification 
-                  changeLocation = {this.changeLocation.bind(this)} 
-                  changeFlag = {this.changeFlag.bind(this)} 
-                  latitude = {this.state.latitude} 
+                <SendNotification
+                  changeLocation = {this.changeLocation.bind(this)}
+                  changeFlag = {this.changeFlag.bind(this)}
+                  latitude = {this.state.latitude}
                   longitude = {this.state.longitude}/>
             );
         }
@@ -166,7 +166,7 @@ const styles = StyleSheet.create({
   },
   profile :{
   // marginTop:0,
-   
+
     alignItems: 'center',
     justifyContent: 'center',
     // position: 'absolute',
@@ -177,7 +177,3 @@ const styles = StyleSheet.create({
     height: 200,
   }
 });
-
-
- 
- 

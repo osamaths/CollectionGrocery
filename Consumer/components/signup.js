@@ -32,7 +32,7 @@ import {Header,Container, Button } from 'native-base';
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(
-                this.state    
+                this.state
             )
         })
        .then((response) => {
@@ -41,7 +41,7 @@ import {Header,Container, Button } from 'native-base';
 
        })
        .then((responseJson) => {
-         
+
            alert(responseJson);
            if(responseJson){
            alert('sucessfuly register !! \n' + "thank you for registering\n  login please")
@@ -68,7 +68,7 @@ else {
   render() {
     return (
       <View  KeyboardAvoidingView behavior="padding" style={styles.container}>
-             
+
 
 
             <Image style={styles.container}
@@ -83,20 +83,20 @@ else {
 
 
 
-           
+
  <Text style= {{ marginTop: 80,  textAlign:'right',fontWeight: 'bold',fontSize: 20 }} > User Name </Text>
- <SearchBar 
+ <SearchBar
                     lightTheme
                     onChangeText = {(val) => this.setState({userName : val})}
                     style = {styles.input} placeholder = 'user name .... '
-                    noIcon 
+                    noIcon
                     required
                 />
 
                   <Text>{'\n'}</Text>
 
 <Text style= {styles.label} > Email </Text>
-                 <SearchBar 
+                 <SearchBar
                 lightTheme
                     onChangeText = {(val) => this.setState({email : val})}
                     style = {styles.input} placeholder = 'Email.....'
@@ -106,8 +106,8 @@ else {
                 <Text>{'\n'}</Text>
 
 <Text style= {styles.label} > Password </Text>
-               
-                <SearchBar 
+
+                <SearchBar
                 lightTheme
                     onChangeText = {(val) => this.setState({password : val})}
                     style = {styles.input} placeholder = 'password.....'
@@ -117,7 +117,7 @@ else {
                 />
                 <Text>{'\n'}</Text>
                 <Text>{'\n'}</Text>
- 
+
  <Text>{'\n'}</Text>
 
 
@@ -130,7 +130,7 @@ else {
                         this.onClickButton.bind(this)
                     }>
                     <Text style= {styles.text} > Sign Up </Text>
-                </TouchableHighlight> 
+                </TouchableHighlight>
 
 
 
@@ -164,7 +164,7 @@ else {
     onPress={()=>{this.state.changeFlag('signup')}}
     >
   </Tab>
- 
+
 </Tabs>
             </Image>
        </View>
@@ -235,23 +235,23 @@ text :{
     textAlign: 'left',
     // color : "#CF0063",
     fontWeight: 'bold',
-    fontSize: 20,  
+    fontSize: 20,
     // opacity:.02
 },
 label :{
     textAlign:'right',
     // color : "#CF0063",
     fontWeight: 'bold',
-    fontSize: 20,  
+    fontSize: 20,
     // opacity:.02
 },
 tabs:{
     flex: 1,
      width: 500,
         height : 30,
-     
+
 
 }
 
-  
+
 });

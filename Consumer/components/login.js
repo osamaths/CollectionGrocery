@@ -1,8 +1,8 @@
 import React from 'react';
 import {StatusBar, Image,View,StyleSheet,TouchableHighlight,Text,TextInput} from 'react-native';
 import SendNotification from './sendNotification'
-import {TabBar,SearchBar,Tabs, Tab, Icon,SideMenu, List, ListItem } from 'react-native-elements'
-import {Header,Container, Button } from 'native-base';
+// import {TabBar,SearchBar,Tabs, Tab, Icon,SideMenu, List, ListItem } from 'react-native-elements'
+// import {Header,Container, Button } from 'native-base';
 // import TabNavigator from 'react-native-tab-navigator';
 //SideBar
 // import {TabNavigator} from "react-navigator";
@@ -17,12 +17,12 @@ export default class login extends React.Component {
             password : '',
             list:''
         };
-      
+
 
     }
 
     //http:192.168.1.2:1128/consumerLogin //osama
-  
+
 
     onClickButton(){
         fetch('http:192.168.2.20:1128/consumerLogin', {//192.168.1.7
@@ -32,7 +32,7 @@ export default class login extends React.Component {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(
-                this.state    
+                this.state
             )
         })
         .then((response) => {
@@ -40,7 +40,7 @@ export default class login extends React.Component {
 
        })
        .then((responseJson) => {
-         
+
            // return responseJson;
            if(responseJson){
            this.state.changeFlag('sendNotification');
@@ -63,16 +63,16 @@ else {
         //       alert("Hi")
         //         alert("Please Sign Up First");
         //         this.state.changeFlag('signup');
-        //     }); 
+        //     });
 
-        
+
     }
 
     render() {
         return (
             <View style={styles.container}>
 
-                
+
 
             <Image style={styles.container}
             source = {require('../images/login3.jpg')}
@@ -82,21 +82,21 @@ else {
             backgroundColor ="#8C0000"
             />
 
-    
 
- 
+
+
 
             <Text  style= {{ marginTop: 180,  textAlign:'right',fontWeight: 'bold',fontSize: 20 }}  > User Name </Text>
-                <SearchBar 
+                <SearchBar
                     lightTheme
                     onChangeText = {(val) =>{ this.setState({consumerName : val})}}
                     style = {styles.input} placeholder = 'user name .... '
-                    noIcon 
+                    noIcon
                 />
 
                   <Text>{'\n'}</Text>
                 <Text style= {styles.label} > Password </Text>
-                <SearchBar 
+                <SearchBar
                 lightTheme
                     onChangeText = {(val) => this.setState({password : val})}
                     style = {styles.input} placeholder = 'password.....'
@@ -113,7 +113,7 @@ else {
                         this.onClickButton.bind(this)
                     }>
                     <Text style= {styles.text} > Log in </Text>
-                </TouchableHighlight> 
+                </TouchableHighlight>
                 <Text>{'\n'}</Text>
   <Text>{'\n'}</Text>
                 <Tabs style={styles.tabs} >
@@ -145,11 +145,11 @@ else {
     onPress={()=>{this.state.changeFlag('signup')}}
     >
   </Tab>
- 
+
 </Tabs>
 
           </Image>
-               
+
 
             </View>
         );
@@ -198,14 +198,14 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     // color : "#CF0063",
     fontWeight: 'bold',
-    fontSize: 20,  
+    fontSize: 20,
     // opacity:.02
 },
 label :{
     textAlign:'right',
     // color : "#CF0063",
     fontWeight: 'bold',
-    fontSize: 20,  
+    fontSize: 20,
     // opacity:.02
 },
 
@@ -247,10 +247,8 @@ tabs:{
     flex: 1,
      width: 500,
         height : 50,
-     
+
 
 }
 
 });
-
-

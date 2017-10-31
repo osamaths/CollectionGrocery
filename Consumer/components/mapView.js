@@ -6,9 +6,9 @@ import MapView from 'react-native-maps';
 
 const {width,height}=Dimensions.get('window');
 const ASPECT_RATION=width/height;
-const LONGTUDEDELTA=0.922*ASPECT_RATION
+const LONGTUDEDELTA=0.922*ASPECT_RATION;
 
-export default class login extends React.Component {
+export default class mapView extends React.Component {
     constructor(props) {
         super(props);
 
@@ -23,30 +23,30 @@ export default class login extends React.Component {
     }
 
 
-    
+
     render() {
         return (
-             <View style ={styles.container}>
-        <TouchableHighlight 
-                        style = {styles.addButton}
-                        onPress = {() => {
-                            this.state.changeFlag('sendNotification');
-                        }}
-                    >
-                      <Image 
-            style = {styles.arrow}
-            source = {require('../images/arrow.png')}
-            
-            />  
-                    </TouchableHighlight>
-        
+         <View style ={styles.container}>
+          <TouchableHighlight
+              style = {styles.addButton}
+              onPress = {() => {
+                  this.state.changeFlag('sendNotification');
+              }}
+          >
+              <Image
+                style = {styles.arrow}
+                source = {require('../images/arrow.png')}
+
+                />
+          </TouchableHighlight>
+
           <MapView
             onPress = {(e) => {
               this.state.changeLocation({
               	latitude: e.nativeEvent.coordinate.latitude,
                 longitude: e.nativeEvent.coordinate.longitude
             })
-              
+
               alert('latitude:' + this.state.getLocation().latitude + '   longitude' + this.state.getLocation().longitude)
             }}
               style={styles.map}
@@ -84,6 +84,3 @@ const styles = StyleSheet.create({
     height: 20,
   }
 });
-
-
-
